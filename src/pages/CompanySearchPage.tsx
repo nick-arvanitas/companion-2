@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import NamesList from './NamesList';
 
-const Search: React.FC = () => {
+export const CompanySearchPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const navigate = useNavigate();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     // TODO: Implement search functionality
     console.log('Searching for:', searchQuery);
-  };
-
-  const handleCompanyClick = (companyId: string) => {
-    navigate(`/company/${companyId}`);
   };
 
   return (
@@ -35,11 +28,6 @@ const Search: React.FC = () => {
           </button>
         </div>
       </form>
-
-      <NamesList onCompanyClick={handleCompanyClick} />
-      <NavLink to="/company/123">Names</NavLink>
     </div>
   );
 };
-
-export default Search;

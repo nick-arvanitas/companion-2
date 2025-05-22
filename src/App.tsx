@@ -1,16 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
-import Search from './pages/Search'
+import{ CompanySearchPage } from './pages/CompanySearchPage'
 import MainLayout from './components/layout/MainLayout'
-import CompanyDetailsPage from './features/companyDetails/pages/CompanyDetailsPage'
+import { CompanyDetailPage } from './pages/CompanyDetailPage';
 
 function App() {
 
   return (
     <MainLayout>
       <Routes>
-        <Route path="/" element={<Search />} />
-        <Route path="/company/:companyId" element={<CompanyDetailsPage />} />
-        <Route path="/names"  />
+        <Route path="/" element={<CompanySearchPage />} />
+        <Route path="/company/:id" element={<CompanyDetailPage onCompanyClick={() => {}} />} />
       </Routes>
     </MainLayout>
   )
