@@ -1,6 +1,4 @@
-import React from 'react';
-
-const CompanyInsurance: React.FC = () => {
+export default function Insurance() {
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4">Insurance Information</h1>
@@ -10,5 +8,3 @@ const CompanyInsurance: React.FC = () => {
     </div>
   );
 };
-
-export default CompanyInsurance; 

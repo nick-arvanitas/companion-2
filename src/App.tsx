@@ -2,11 +2,11 @@ import { Routes, Route } from 'react-router-dom';
 import CompanySearchPage from './pages/CompanySearchPage'
 import MainLayout from './components/layout/MainLayout'
 import CompanyDetailPage from './pages/CompanyDetailPage';
-import CompanyOverview from './pages/company/CompanyOverview';
-import CompanyFinance from './pages/company/CompanyFinance';
-import CompanySafety from './pages/company/CompanySafety';
-import CompanyInsurance from './pages/company/CompanyInsurance';
-import CompanyDocuments from './pages/company/CompanyDocuments';
+import CompanyOverview from './pages/company/Overview';
+import CompanyFinance from './pages/company/Finance';
+import CompanySafety from './pages/company/Safety';
+import CompanyInsurance from './pages/company/Insurance';
+import CompanyDocuments from './pages/company/Documents';
 
 function App() {
 

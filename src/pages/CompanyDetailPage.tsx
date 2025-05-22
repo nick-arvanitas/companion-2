@@ -15,13 +15,26 @@ const CompanyDetailPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div>
       {/* Company Header */}
       <div className="bg-white shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-6">
-            <h1 className="text-3xl font-bold text-gray-900">Company Name</h1>
-            <p className="mt-1 text-sm text-gray-500">Company ID: {id}</p>
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => navigate('/')}
+                className="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                <svg className="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Back
+              </button>
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900">Company Name</h1>
+                <p className="mt-1 text-sm text-gray-500">Company ID: {id}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

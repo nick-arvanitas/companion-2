@@ -1,6 +1,5 @@
-import React from 'react';
 
-const CompanyDocuments: React.FC = () => {
+export default function Documents() {
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4">Company Documents</h1>
@@ -9,6 +8,4 @@ const CompanyDocuments: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default CompanyDocuments; 
+}

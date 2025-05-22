@@ -1,6 +1,4 @@
-import React from 'react';
-
-const CompanySafety: React.FC = () => {
+export default function Safety() {
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4">Safety Information</h1>
@@ -9,6 +7,4 @@ const CompanySafety: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default CompanySafety; 
+}

@@ -1,0 +1,27 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Development Environment & Setup
+
+I'm currently working on a **Chrome Manifest V3** extension using the **sidePanel** API.
+
+- **Framework:** React 19 (latest React version)
+- **UI Library:** Shadcn UI (for component primitives and design system)
+- **Styling:** Tailwind CSS (utility-first styling)
+- **Build Tool:** Vite (fast React tooling, assumed for modern React projects)
+- **Extension Features:**  
+  - Uses Manifest V3 with service worker background scripts  
+  - Implements React-based UI inside the sidePanel  
+  - Focused on performant, modular, and scalable component design  
+- **Additional Notes:**  
+  - Ensuring compatibility with Chrome's Manifest V3 policies  
+  - Using React 19's concurrent features where applicable  
+  - Leveraging Tailwind for rapid, responsive design  
+  - Using Shadcn UI for accessible, customizable UI primitives  
+  - Handling Chrome extension-specific APIs (sidePanel, storage, messaging) with React hooks
+
+---
+
+If you want me to provide a JSON manifest snippet or example React component setup for the sidePanel, just let me know!

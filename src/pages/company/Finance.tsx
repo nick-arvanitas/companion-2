@@ -1,6 +1,4 @@
-import React from 'react';
-
-const CompanyFinance: React.FC = () => {
+export default function Finance() {
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4">Financial Information</h1>
@@ -10,5 +8,3 @@ const CompanyFinance: React.FC = () => {
     </div>
   );
 };
-
-export default CompanyFinance; 
