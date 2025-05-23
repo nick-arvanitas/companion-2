@@ -1,28 +1,41 @@
-import React from 'react';
-import { Row } from '@/components/ui/row';
+import { List, ListHeader, ListRow } from '@/components/ui/list';
 import { Pill } from '@/components/ui/pill';
+import { Company } from '@/types/company';
+import React from 'react';
+import { useOutletContext } from 'react-router-dom';
 
 const Overview: React.FC = () => {
+  const { company } = useOutletContext<{ company: Company }>();
+
   return (
     <div>
-      <Row label="Status">
-        <Pill variant="success">Active</Pill>
-      </Row>
-      <Row label="Safety">
-        <Pill variant="success">Approved</Pill>
-      </Row>
-      <Row label="Finance">
-        <Pill variant="success">Approved</Pill>
-      </Row>
-      <Row label="Insurance">
-        <span className="text-sm text-gray-600">Expires: Nov-01-2025</span>
-      </Row>
-      <Row label="Single Limit">
-        <span className="text-sm font-medium">$10,000,000</span>
-      </Row>
-      <Row label="Aggregate Limit">
-        <span className="text-sm font-medium">$30,000,000</span>
-      </Row>
+      <List>
+        <ListHeader>Approvals</ListHeader>
+        <ListRow label="Status">
+          <Pill variant="success" className="text-sm">
+            {company.status}
+          </Pill>
+        </ListRow>
+        <ListRow label="Safety">
+          <Pill variant="success" className="text-sm">
+            Approved
+          </Pill>
+        </ListRow>
+        <ListRow label="Finance">
+          <Pill variant="success" className="text-sm">
+            Approved
+          </Pill>
+        </ListRow>
+        <ListRow label="Insurance">
+          <span className="text-zinc-600">Expires: Nov-01-2025</span>
+        </ListRow>
+        <ListRow label="Single Limit">
+          <span className="font-medium">$10,000,000</span>
+        </ListRow>
+        <ListRow label="Aggregate Limit">
+          <span className="font-medium">$30,000,000</span>
+        </ListRow>
+      </List>
     </div>
   );
 };

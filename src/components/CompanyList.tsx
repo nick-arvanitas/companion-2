@@ -50,12 +50,12 @@ export default function CompanyList() {
           <Link
             key={company.companyId}
             to={`/company/${company.companyId}/overview`}
-            className="block cursor-pointer rounded-lg border p-4 hover:bg-gray-50"
+            className="block cursor-pointer rounded-lg border p-4 hover:bg-zinc-50"
           >
             <div className="flex items-start justify-between">
               <div>
                 <h3 className="font-medium">{company.displayName}</h3>
-                <p className="mt-1 text-sm text-gray-600">{company.companySummary.summary}</p>
+                <p className="mt-1 text-sm text-zinc-600">{company.companySummary.summary}</p>
               </div>
               <div className="flex gap-2"></div>
             </div>

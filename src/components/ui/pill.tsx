@@ -1,5 +1,5 @@
-import React from 'react';
 import { cn } from '@/lib/utils';
+import React from 'react';
 
 interface PillProps extends React.HTMLAttributes<HTMLSpanElement> {
   variant?: 'success' | 'warning' | 'error' | 'default';
@@ -17,7 +17,7 @@ const Pill = React.forwardRef<HTMLSpanElement, PillProps>(
             'bg-green-100 text-green-800': variant === 'success',
             'bg-yellow-100 text-yellow-800': variant === 'warning',
             'bg-red-100 text-red-800': variant === 'error',
-            'bg-gray-100 text-gray-800': variant === 'default',
+            'bg-zinc-100 text-zinc-800': variant === 'default',
           },
           className
         )}

@@ -25,7 +25,7 @@ export default function TabNavigation() {
 
   return (
     <nav>
-      <div className="flex h-16 items-center justify-around">
+      <div className="mt-4 flex justify-center gap-x-4 rounded-lg">
         {tabs.map((tab) => {
           const isActive = location.pathname.endsWith(tab.href);
 
@@ -33,11 +33,11 @@ export default function TabNavigation() {
             <Link
               key={tab.name}
               to={tab.href}
-              className={`flex h-full w-full flex-col items-center justify-center
-                ${isActive ? 'text-blue-500' : 'text-gray-500 hover:text-gray-700'}`}
+              className={`flex flex-grow flex-col items-center gap-y-1 rounded-md p-2 transition-all duration-300 ease-in-out hover:bg-zinc-50
+                ${isActive ? 'bg-zinc-50 text-blue-500' : 'group text-zinc-500'}`}
             >
-              <FontAwesomeIcon icon={tab.icon} className="mb-1 h-5 w-5" />
-              <span className="text-xs">{tab.name}</span>
+              <FontAwesomeIcon icon={tab.icon} className="mb-1 size-5 group-hover:text-blue-600" />
+              <span className="text-sm group-hover:text-blue-700">{tab.name}</span>
             </Link>
           );
         })}

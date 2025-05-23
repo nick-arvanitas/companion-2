@@ -1,24 +1,35 @@
 import TabNavigation from '@/components/layout/TabNavigation';
+import { Button } from '@/components/ui/button';
+import { Company } from '@/types/company';
+import { ExternalLinkIcon } from 'lucide-react';
 import React from 'react';
-import { Outlet, useParams } from 'react-router-dom';
+import { Outlet, useOutletContext, useParams } from 'react-router-dom';
 
 const CompanyPage: React.FC = () => {
   const { id } = useParams();
+  const { companies } = useOutletContext<{ companies: Company[] }>();
+
+  const company = companies.find((company) => company.uuid === id);
+
+  if (!company) {
+    return <div>Company not found</div>;
+  }
 
   return (
     <div>
       {/* Company Header */}
 
-      <div className="py-6">
-        <div className="flex flex-col">
-          <h1 className="text-3xl font-bold text-gray-900">Company Name</h1>
-          <p className="mt-1 text-sm text-gray-500">Company ID: {id}</p>
-        </div>
+      <div className="flex gap-x-2">
+        <h1 className="block w-full text-2xl font-bold text-zinc-900">{company.displayName}</h1>
+        <Button variant="ghost" color="primary" size="sm">
+          View in Highwire
+          <ExternalLinkIcon className="ml-2 h-4 w-4" />
+        </Button>
       </div>
       <TabNavigation />
       {/* Page Content */}
-      <main className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <Outlet />
+      <main>
+        <Outlet context={{ company }} />
       </main>
     </div>
   );
