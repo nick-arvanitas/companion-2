@@ -19,7 +19,7 @@ const CompanyPage: React.FC = () => {
     <div>
       {/* Company Header */}
 
-      <div className="flex gap-x-2">
+      <div className="flex items-center gap-x-2">
         <h1 className="block w-full text-2xl font-bold text-zinc-900">{company.displayName}</h1>
         <Button variant="ghost" color="primary" size="sm">
           View in Highwire

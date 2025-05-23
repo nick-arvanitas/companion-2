@@ -33,7 +33,7 @@ export default function TabNavigation() {
             <Link
               key={tab.name}
               to={tab.href}
-              className={`flex flex-grow flex-col items-center gap-y-1 rounded-md p-2 transition-all duration-300 ease-in-out hover:bg-zinc-50
+              className={`flex flex-grow flex-col items-center gap-y-1 rounded-md px-2 pb-2 pt-3 transition-all duration-300 ease-in-out hover:bg-zinc-50
                 ${isActive ? 'bg-zinc-50 text-blue-500' : 'group text-zinc-500'}`}
             >
               <FontAwesomeIcon icon={tab.icon} className="mb-1 size-5 group-hover:text-blue-600" />

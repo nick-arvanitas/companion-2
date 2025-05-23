@@ -27,13 +27,15 @@ const Overview: React.FC = () => {
           </Pill>
         </ListRow>
         <ListRow label="Insurance">
-          <span className="text-zinc-600">Expires: Nov-01-2025</span>
+          <Pill variant="success" className="text-sm">
+            Expires: 01 Nov 2025
+          </Pill>
         </ListRow>
         <ListRow label="Single Limit">
-          <span className="font-medium">$10,000,000</span>
+          <span className="text-sm font-medium">$10,000,000</span>
         </ListRow>
         <ListRow label="Aggregate Limit">
-          <span className="font-medium">$30,000,000</span>
+          <span className="text-sm font-medium">$30,000,000</span>
         </ListRow>
       </List>
     </div>

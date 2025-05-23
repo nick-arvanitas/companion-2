@@ -40,7 +40,7 @@ export default function CompanyLayout() {
   };
 
   return (
-    <div className="mx-auto max-w-7xl p-4">
+    <div className="mx-auto max-w-7xl">
       <div className="mb-6">
         <div className="mb-6">
           <Select onValueChange={handleCompanySelect} disabled={loading}>

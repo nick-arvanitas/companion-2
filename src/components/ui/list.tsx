@@ -10,7 +10,7 @@ interface ListHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 interface ListRowProps extends React.HTMLAttributes<HTMLDivElement> {
-  label: string;
+  label?: string;
   children: React.ReactNode;
 }
 
@@ -28,7 +28,7 @@ List.displayName = 'List';
 const ListHeader = React.forwardRef<HTMLDivElement, ListHeaderProps>(
   ({ className, children, ...props }, ref) => {
     return (
-      <div ref={ref} className={cn('px-1 pb-1 pt-4 text-lg font-medium', className)} {...props}>
+      <div ref={ref} className={cn('px-1 pt-6 text-lg font-medium', className)} {...props}>
         {children}
       </div>
     );
@@ -47,8 +47,8 @@ const ListRow = React.forwardRef<HTMLDivElement, ListRowProps>(
         )}
         {...props}
       >
-        <span className="text-base text-zinc-600">{label}</span>
-        <div className="flex items-center gap-2">{children}</div>
+        {label && <span className="text-sm text-zinc-600">{label}</span>}
+        <div className="flex items-center gap-2 text-sm">{children}</div>
       </div>
     );
   }

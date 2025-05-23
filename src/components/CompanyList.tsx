@@ -1,22 +1,8 @@
+import { Company } from '@/types/company';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function CompanyList() {
-  interface Company {
-    companyId: string;
-    companyName: string;
-    displayName: string;
-    companySummary: {
-      summary: string;
-      summaryMeta: string;
-    };
-    status: string;
-    awards: {
-      safetyBadge: number;
-      financeBadge: number;
-    };
-  }
-
   const [companies, setCompanies] = useState<Company[]>([]);
   const [, setLoading] = useState(true);
   const [, setError] = useState<string | null>(null);
@@ -48,14 +34,13 @@ export default function CompanyList() {
       <div className="grid gap-4">
         {companies.map((company) => (
           <Link
-            key={company.companyId}
-            to={`/company/${company.companyId}/overview`}
+            key={company.uuid}
+            to={`/company/${company.uuid}/overview`}
             className="block cursor-pointer rounded-lg border p-4 hover:bg-zinc-50"
           >
             <div className="flex items-start justify-between">
               <div>
                 <h3 className="font-medium">{company.displayName}</h3>
-                <p className="mt-1 text-sm text-zinc-600">{company.companySummary.summary}</p>
               </div>
               <div className="flex gap-2"></div>
             </div>
