@@ -1,6 +1,7 @@
 import {
   faBuilding,
   faChartLine,
+  faCheckCircle,
   faFileContract,
   faFolder,
   faShieldAlt,
@@ -19,10 +20,11 @@ export default function TabNavigation() {
     { name: 'Safety', href: 'safety', icon: faShieldAlt },
     { name: 'Insurance', href: 'insurance', icon: faFileContract },
     { name: 'Documents', href: 'documents', icon: faFolder },
+    { name: 'Completion', href: 'completion', icon: faCheckCircle },
   ];
 
   return (
-    <nav className="border-t border-gray-200 bg-white">
+    <nav>
       <div className="flex h-16 items-center justify-around">
         {tabs.map((tab) => {
           const isActive = location.pathname.endsWith(tab.href);
