@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { List, ListHeader } from '@/components/ui/list';
 import { Row } from '@/components/ui/row';
 import { FileTypeIcon } from '@/lib/constants/fileTypeIcon';
 import { cn, formatDate } from '@/lib/utils';
@@ -33,7 +34,9 @@ export function Documents() {
     },
   ];
   return (
-    <div className="pt-6">
+    <List>
+      <ListHeader>Documents</ListHeader>
+
       {files.map((file) => (
         <Row key={file.name} className="*:w-full">
           <div className="flex w-full items-center justify-between gap-x-2">
@@ -65,6 +68,6 @@ export function Documents() {
           </div>
         </Row>
       ))}
-    </div>
+    </List>
   );
 }

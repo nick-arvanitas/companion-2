@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import {
   faBuilding,
   faCheckSquare,
@@ -26,8 +27,8 @@ export function NavBar() {
   ];
 
   return (
-    <nav className="overflow-x-auto">
-      <div className="mt-4 flex gap-x-4 rounded-lg">
+    <nav className="hide-scrollbar overflow-x-auto">
+      <div className="mt-4 flex gap-x-2 rounded-lg">
         {tabs.map((tab) => {
           const isActive = location.pathname.endsWith(tab.href);
 
@@ -35,8 +36,10 @@ export function NavBar() {
             <Link
               key={tab.name}
               to={tab.href}
-              className={`flex flex-grow flex-col items-center gap-y-1 rounded-md px-2 pb-2 pt-3 transition-all duration-300 ease-in-out hover:bg-zinc-50
-                ${isActive ? 'bg-zinc-50 text-blue-500' : 'group text-zinc-500'}`}
+              className={cn(
+                'flex min-w-20 flex-grow flex-col items-center gap-y-1 rounded-md px-3 pb-2 pt-3 transition-all duration-300 ease-in-out hover:bg-zinc-50',
+                isActive ? 'bg-zinc-50 text-blue-500' : 'group text-zinc-500'
+              )}
             >
               <FontAwesomeIcon
                 icon={tab.icon}

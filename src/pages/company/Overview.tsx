@@ -1,19 +1,15 @@
 import { List, ListHeader, ListRow } from '@/components/ui/list';
 import { Pill } from '@/components/ui/pill';
-import { Company } from '@/types/company';
 import React from 'react';
-import { useOutletContext } from 'react-router-dom';
 
 export const Overview: React.FC = () => {
-  const { company } = useOutletContext<{ company: Company }>();
-
   return (
     <div>
       <List>
         <ListHeader>Approvals</ListHeader>
         <ListRow label="Status">
           <Pill variant="success" className="text-sm">
-            {company.status}
+            Active
           </Pill>
         </ListRow>
         <ListRow label="Safety">
