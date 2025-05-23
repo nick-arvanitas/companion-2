@@ -1,11 +1,11 @@
-import TabNavigation from '@/components/layout/TabNavigation';
+import { NavBar } from '@/components/layout/NavBar';
 import { Button } from '@/components/ui/button';
 import { Company } from '@/types/company';
 import { ExternalLinkIcon } from 'lucide-react';
 import React from 'react';
-import { Outlet, useOutletContext, useParams } from 'react-router-dom';
+import { Link, Outlet, useOutletContext, useParams } from 'react-router-dom';
 
-const CompanyPage: React.FC = () => {
+export const CompanyPage: React.FC = () => {
   const { id } = useParams();
   const { companies } = useOutletContext<{ companies: Company[] }>();
 
@@ -21,12 +21,15 @@ const CompanyPage: React.FC = () => {
 
       <div className="flex items-center gap-x-2">
         <h1 className="block w-full text-2xl font-bold text-zinc-900">{company.displayName}</h1>
-        <Button variant="ghost" color="primary" size="sm">
-          View in Highwire
-          <ExternalLinkIcon className="ml-2 h-4 w-4" />
-        </Button>
+        {/* This will link to app2  */}
+        <Link to={`https://network.highwire.com/company/90961766-ea9d-495c-a186-1dcb0a1f7026`}>
+          <Button variant="ghost" color="primary" size="sm">
+            View in Highwire
+            <ExternalLinkIcon className="size-4" />
+          </Button>
+        </Link>
       </div>
-      <TabNavigation />
+      <NavBar />
       {/* Page Content */}
       <main>
         <Outlet context={{ company }} />
@@ -34,5 +37,3 @@ const CompanyPage: React.FC = () => {
     </div>
   );
 };
-
-export default CompanyPage;

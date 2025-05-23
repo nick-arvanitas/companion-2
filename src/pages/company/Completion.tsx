@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Progress } from '@/components/ui/progress';
 import { Row } from '@/components/ui/row';
 
-export default function Completion() {
+export function Completion() {
   const completionPercentage = 75; // This would typically come from your data source
 
   return (

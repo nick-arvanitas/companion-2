@@ -4,7 +4,7 @@ import { Company } from '@/types/company';
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 
-const Overview: React.FC = () => {
+export const Overview: React.FC = () => {
   const { company } = useOutletContext<{ company: Company }>();
 
   return (
@@ -41,5 +41,3 @@ const Overview: React.FC = () => {
     </div>
   );
 };
-
-export default Overview;

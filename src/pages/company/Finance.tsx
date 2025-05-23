@@ -1,12 +1,20 @@
 import { List, ListHeader, ListRow } from '@/components/ui/list';
 import { Pill } from '@/components/ui/pill';
+import { PillSparkline } from '@/features/company-detail/components/pill-sparkline';
 
-export default function Finance() {
+export function Finance() {
+  const data = [
+    { date: 'Q3-2024', value: 80 },
+    { date: 'Q4-2024', value: 80 },
+    { date: 'Q1-2025', value: 75 },
+  ];
   return (
     <div>
       <List>
         <ListHeader>Financial Metrics</ListHeader>
-        <ListRow>Finance Score</ListRow>
+        <ListRow label="Finance Score">
+          <PillSparkline chartData={data} pillData="75" />
+        </ListRow>
         <ListRow label="Status">
           <Pill variant="success" className="text-sm">
             Approved

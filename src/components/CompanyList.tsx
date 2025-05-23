@@ -2,7 +2,7 @@ import { Company } from '@/types/company';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function CompanyList() {
+export function CompanyList() {
   const [companies, setCompanies] = useState<Company[]>([]);
   const [, setLoading] = useState(true);
   const [, setError] = useState<string | null>(null);

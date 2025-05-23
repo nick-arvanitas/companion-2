@@ -10,7 +10,7 @@ import { Company } from '@/types/company';
 import { useEffect, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 
-export default function CompanyLayout() {
+export function CompanyLayout() {
   const [companies, setCompanies] = useState<Company[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
