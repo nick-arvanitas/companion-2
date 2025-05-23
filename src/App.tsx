@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import CompanySearchPage from './pages/CompanySearchPage'
-import MainLayout from './components/layout/MainLayout'
+import CompanySearchPage from './pages/CompanySearchPage';
+import MainLayout from './components/layout/MainLayout';
 import CompanyDetailPage from './pages/CompanyDetailPage';
 import CompanyOverview from './pages/company/Overview';
 import CompanyFinance from './pages/company/Finance';
@@ -9,7 +9,6 @@ import CompanyInsurance from './pages/company/Insurance';
 import CompanyDocuments from './pages/company/Documents';
 
 function App() {
-
   return (
     <MainLayout>
       <Routes>
@@ -24,7 +23,7 @@ function App() {
         </Route>
       </Routes>
     </MainLayout>
-  )
+  );
 }
 
-export default App
+export default App;

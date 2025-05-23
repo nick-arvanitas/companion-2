@@ -12,7 +12,7 @@ const Pill = React.forwardRef<HTMLSpanElement, PillProps>(
       <span
         ref={ref}
         className={cn(
-          "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium",
+          'inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium',
           {
             'bg-green-100 text-green-800': variant === 'success',
             'bg-yellow-100 text-yellow-800': variant === 'warning',
@@ -29,6 +29,6 @@ const Pill = React.forwardRef<HTMLSpanElement, PillProps>(
   }
 );
 
-Pill.displayName = "Pill";
+Pill.displayName = 'Pill';
 
-export { Pill }; 
+export { Pill };

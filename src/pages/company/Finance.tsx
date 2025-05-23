@@ -1,10 +1,10 @@
 export default function Finance() {
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Financial Information</h1>
-      <div className="bg-white rounded-lg shadow p-6">
+      <h1 className="mb-4 text-2xl font-bold">Financial Information</h1>
+      <div className="rounded-lg bg-white p-6 shadow">
         <p>Financial information and metrics will be displayed here.</p>
       </div>
     </div>
   );
-};
+}

@@ -71,4 +71,4 @@ export type Company = {
     status: string;
     archived: boolean;
   };
-}
+};

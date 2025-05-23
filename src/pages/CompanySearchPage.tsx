@@ -28,7 +28,9 @@ export default function CompanySearchPage() {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await fetch('https://run.mocky.io/v3/bd98199e-f71c-4656-b90f-8b0ea582ae61');
+        const response = await fetch(
+          'https://run.mocky.io/v3/bd98199e-f71c-4656-b90f-8b0ea582ae61'
+        );
         if (!response.ok) {
           throw new Error('Failed to fetch companies');
         }
@@ -50,16 +52,17 @@ export default function CompanySearchPage() {
     console.log('Searching for:', searchQuery);
   };
 
-  const filteredCompanies = companies.filter(company => 
-    company.companyName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    company.displayName.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredCompanies = companies.filter(
+    (company) =>
+      company.companyName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      company.displayName.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   if (loading) {
     return (
-      <div className="max-w-2xl mx-auto p-4">
-        <div className="flex justify-center items-center h-64">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+      <div className="mx-auto max-w-2xl p-4">
+        <div className="flex h-64 items-center justify-center">
+          <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-blue-500"></div>
         </div>
       </div>
     );
@@ -67,16 +70,14 @@ export default function CompanySearchPage() {
 
   if (error) {
     return (
-      <div className="max-w-2xl mx-auto p-4">
-        <div className="text-red-500 text-center">
-          Error: {error}
-        </div>
+      <div className="mx-auto max-w-2xl p-4">
+        <div className="text-center text-red-500">Error: {error}</div>
       </div>
     );
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-4">
+    <div className="mx-auto max-w-2xl p-4">
       <form onSubmit={handleSearch} className="mb-6">
         <div className="flex w-full max-w-sm items-center space-x-2">
           <Input
@@ -85,9 +86,7 @@ export default function CompanySearchPage() {
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search companies..."
           />
-          <Button type="submit">
-            Search
-          </Button>
+          <Button type="submit">Search</Button>
         </div>
       </form>
 
@@ -95,15 +94,15 @@ export default function CompanySearchPage() {
         <h2 className="text-xl font-semibold">Companies</h2>
         <div className="grid gap-4">
           {filteredCompanies.map((company) => (
-            <Link 
+            <Link
               key={company.companyId}
               to={`/company/${company.companyId}/overview`}
-              className="p-4 border rounded-lg cursor-pointer hover:bg-gray-50 block"
+              className="block cursor-pointer rounded-lg border p-4 hover:bg-gray-50"
             >
-              <div className="flex justify-between items-start">
+              <div className="flex items-start justify-between">
                 <div>
                   <h3 className="font-medium">{company.displayName}</h3>
-                  <p className="text-sm text-gray-600 mt-1">{company.companySummary.summary}</p>
+                  <p className="mt-1 text-sm text-gray-600">{company.companySummary.summary}</p>
                 </div>
                 <div className="flex gap-2">
                   <Pill variant={company.status === 'active' ? 'success' : 'warning'}>
@@ -111,8 +110,7 @@ export default function CompanySearchPage() {
                   </Pill>
                 </div>
               </div>
-              <div className="mt-2 flex gap-2">
-              </div>
+              <div className="mt-2 flex gap-2"></div>
             </Link>
           ))}
         </div>

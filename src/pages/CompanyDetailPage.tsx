@@ -18,15 +18,20 @@ const CompanyDetailPage: React.FC = () => {
     <div>
       {/* Company Header */}
       <div className="bg-white shadow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="py-6">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => navigate('/')}
-                className="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="inline-flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
-                <svg className="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                  />
                 </svg>
                 Back
               </button>
@@ -40,8 +45,8 @@ const CompanyDetailPage: React.FC = () => {
       </div>
 
       {/* Navigation Tabs */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="border-b border-gray-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <nav className="flex space-x-8" aria-label="Tabs">
             {tabs.map((tab) => {
               const isActive = location.pathname.endsWith(tab.path);
@@ -50,10 +55,11 @@ const CompanyDetailPage: React.FC = () => {
                   key={tab.path}
                   onClick={() => navigate(`/company/${id}/${tab.path}`)}
                   className={`
-                    whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm
-                    ${isActive
-                      ? 'border-blue-500 text-blue-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium
+                    ${
+                      isActive
+                        ? 'border-blue-500 text-blue-600'
+                        : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
                     }
                   `}
                 >
@@ -66,7 +72,7 @@ const CompanyDetailPage: React.FC = () => {
       </div>
 
       {/* Page Content */}
-      <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <Outlet />
       </main>
     </div>

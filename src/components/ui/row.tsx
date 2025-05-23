@@ -12,20 +12,18 @@ const Row = React.forwardRef<HTMLDivElement, RowProps>(
       <div
         ref={ref}
         className={cn(
-          "flex items-center justify-between py-3 border-b border-gray-200 last:border-b-0",
+          'flex items-center justify-between border-b border-gray-200 py-3 last:border-b-0',
           className
         )}
         {...props}
       >
         <span className="text-sm font-medium text-gray-700">{label}</span>
-        <div className="flex items-center gap-2">
-          {children}
-        </div>
+        <div className="flex items-center gap-2">{children}</div>
       </div>
     );
   }
 );
 
-Row.displayName = "Row";
+Row.displayName = 'Row';
 
 export { Row };
