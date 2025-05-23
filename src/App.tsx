@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import { CompanyList } from './components/CompanyList';
 import { MainLayout } from './components/layout/MainLayout';
+import { CompanyList } from './features/company-list/components/CompanyList';
 import { Company } from './pages/company/Company';
 import { Completion } from './pages/company/Completion';
 import { Documents } from './pages/company/Documents';
